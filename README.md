@@ -61,9 +61,9 @@ You should add the Mixpanel API to your app's content security policy. To do thi
 
 ### pageviews
 
-`trackPageView: function(page)`
+`trackPageView: function(page, overrides = {})`
 
-Note: Pageviews are tracked automatically, no mixins required.
+Note: Pageviews are tracked automatically, no mixins required. You can override [any properties mixpanel stores by default](https://mixpanel.com/help/questions/articles/what-properties-do-mixpanels-libraries-store-by-default) by providing an optional `overrides` object.
 
 ### events
 
