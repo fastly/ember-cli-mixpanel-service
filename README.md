@@ -70,28 +70,34 @@ Note: Pageviews are tracked automatically, no mixins required. You can override 
 
 `trackEvent: function(event, properties, options, callback)`
 
-Alias of the mixpanel `track` function
+Alias of the mixpanel [`track`](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.track) function
 
 ### identify
 
 `identify: function(userId, traits, options, callback)`
 
-Alias of the mixpanel `identify` function
+Alias of the mixpanel [`identify`](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.identify) function
 
 ### alias
 
 `alias: function(userId, previousId, options, callback)`
 
-Alias of the mixpanel `alias` function
+Alias of the mixpanel [`alias`](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.alias) function
 
 ### register
 
 `register: function(traits, options, callback)`
 
-Alias of the mixpanel `register` function
+Alias of the mixpanel [`register`](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.register) function
 
 ### peopleSet
 
 `peopleSet: function(attributes)`
 
-Alias of the mixpanel `people.set` function
+Alias of the mixpanel [`people.set`](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.people.set) function
+
+### peopleIncrement
+
+`peopleIncrement: function(arguments)`
+
+Alias of the mixpanel [`people.increment`](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.people.increment) function where arguments are same as what mixpanel's `people.increment` method takes.
