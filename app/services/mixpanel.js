@@ -78,5 +78,41 @@ export default Ember.Service.extend({
         if (this.logTrackingEnabled()) {
             this.logTracking('people.set', attributes);
         }
+    },
+
+    peopleIncrement: function() {
+
+      if (this.pageHasAnalytics()) {
+          window.mixpanel.people.increment(arguments);
+      }
+
+      if (this.logTrackingEnabled()) {
+          this.logTracking('people.increment', arguments);
+      }
+    },
+
+    // Mixpanel does not have an api to increment super property directly.
+    // Instread, they recommend using get_property to fetch the value, increment
+    // it and then register it. More details at https://mixpanel.com/blog/2015/01/29/incremental-super-properties
+
+    superIncrement: function(property, increment = 1) {
+      if (this.pageHasAnalytics()) {
+          var currentValue = window.mixpanel.get_property(property);
+          var updatedValue = {};
+
+          if(currentValue && typeof(currentValue) === 'number') {
+            updatedValue[property] = currentValue + increment;
+          }
+
+          else {
+            updatedValue[property] = increment;
+          }
+
+          window.mixpanel.register(updatedValue);
+      }
+
+      if (this.logTrackingEnabled()) {
+          this.logTracking('increment super property', property, increment);
+      }
     }
 });
