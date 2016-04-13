@@ -59,7 +59,7 @@ export default Ember.Service.extend({
         }
     },
 
-  register: function(traits, options, callback) {
+    register: function(traits, options, callback) {
         if (this.pageHasAnalytics()) {
             window.mixpanel.register(traits, options, callback);
         }
