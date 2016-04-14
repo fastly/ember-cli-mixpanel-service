@@ -83,7 +83,7 @@ export default Ember.Service.extend({
     peopleIncrement: function() {
 
       if (this.pageHasAnalytics()) {
-          window.mixpanel.people.increment.apply(this, arguments);
+          window.mixpanel.people.increment.apply(window.mixpanel.people, arguments);
       }
 
       if (this.logTrackingEnabled()) {
