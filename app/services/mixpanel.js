@@ -59,7 +59,7 @@ export default Ember.Service.extend({
         }
     },
 
-  register: function(traits, options, callback) {
+    register: function(traits, options, callback) {
         if (this.pageHasAnalytics()) {
             window.mixpanel.register(traits, options, callback);
         }
@@ -80,10 +80,10 @@ export default Ember.Service.extend({
         }
     },
 
-    peopleIncrement: function() {
+    peopleIncrement: function(property, increment = 1) {
 
       if (this.pageHasAnalytics()) {
-          window.mixpanel.people.increment(arguments);
+          window.mixpanel.people.increment(property, increment);
       }
 
       if (this.logTrackingEnabled()) {
@@ -115,4 +115,5 @@ export default Ember.Service.extend({
           this.logTracking('increment super property', property, increment);
       }
     }
+
 });
