@@ -1,3 +1,9 @@
+# Fastly ember-cli-mixpanel-service notes
+
+1. Follow these instructions to configure remote for the fork: https://help.github.com/articles/configuring-a-remote-for-a-fork/
+1. Follow these instructions to sync fork to our Fastly repo: https://help.github.com/articles/syncing-a-fork/
+1. If you run into issues with Mixpanel in local development, try a `bin/nombom` on your local Tango repo.
+
 # ember-cli-mixpanel-service
 
 [![npm version](https://badge.fury.io/js/ember-cli-mixpanel-service.svg)](http://badge.fury.io/js/ember-cli-mixpanel-service)
